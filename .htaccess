@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+
+  # Turn Off mod_dir Redirect For Existing Directories
+  DirectorySlash Off
+  
+  # Rewrite For Public Folder
+  RewriteEngine on
+  RewriteRule ^(.*)$ public/$1 [L]
+
+
+RewriteCond %{HTTP_HOST} !^www.ekhabarpatrika.com$ [NC]
+RewriteRule ^(.*)$ http://www.ekhabarpatrika.com/$1 [L,R=301]
+
+RewriteCond %{HTTP_HOST} ^www\.ekhabarpatrika\.com$
+RewriteRule ^/?$ "http\:\/\/ekhabarpatrika\.com\/" [R=301,L]
+</IfModule>

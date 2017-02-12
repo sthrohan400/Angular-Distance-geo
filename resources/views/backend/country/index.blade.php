@@ -44,6 +44,15 @@ Dashboard / web / country
 
 
 				</div>
+				<div class="form-group">
+
+					<label for="position" >Position:</label>
+
+
+					<input type="text" class="form-control" id="position" placeholder="Enter Position" name="position" value="" required>
+
+
+				</div>
 				<div class="box-footer">
 					<button type="submit" class="btn btn-primary btn-flat btn-sm">Submit</button>
 				</div>
