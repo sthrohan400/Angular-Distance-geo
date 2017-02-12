@@ -47,8 +47,8 @@ class AppServiceProvider extends ServiceProvider
 
 	public function registerForexRepository() {
 		return $this->app->bind(
-			'App\\Repositories\\Forex\\ForexRepository',
-			'App\\Repositories\\Forex\\EloquentForex'
+			'App\\Repositories\\Api\\ApiRepository',
+			'App\\Repositories\\Api\\EloquentApi'
 		);
 	}
 
