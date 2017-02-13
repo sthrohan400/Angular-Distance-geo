@@ -88,8 +88,10 @@ Dashboard / web / conversion
 						
 						<td>
 							<div class="btn-group btn-group-xs">
+							@if(array_key_exists('conversion_id', $data))
 								
-								<a href="{{url('admin/web/conversion/delete/'.$data['id'])}}" class="btn btn-danger" data-toggle="tooltip" title="Delete" onclick="return confirm('Are you sure you want to delete this Notice Permanently?')">Delete</a>
+								<a href="{{url('admin/web/conversion/delete/'.$data['conversion_id'])}}" class="btn btn-danger" data-toggle="tooltip" title="Delete" onclick="return confirm('Are you sure you want to delete this Notice Permanently?')">Delete</a>
+								@endif
 							</div>
 
 
