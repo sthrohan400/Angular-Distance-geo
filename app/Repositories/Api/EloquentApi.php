@@ -22,7 +22,7 @@ class EloquentApi implements ApiRepository{
 					->join('forex_conversions','forex_conversions.country_id','=','countries.id')
 					->select('countries.name','countries.flag','forex_conversions.selling_price','forex_conversions.cost_price')
 					->whereDate('forex_conversions.created_at',Date('Y-m-d'))
-					
+
 					->orderBy('countries.position','ASC')
 					->get();
 			return $this->formatInTableForForex($datas);
