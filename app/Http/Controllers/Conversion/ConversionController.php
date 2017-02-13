@@ -41,10 +41,12 @@ class ConversionController extends Controller
 			$temp_array['flag'] = $country->flag;
 			$temp_array['amount'] = $country->amount;
 			$temp_array['id'] = $country->id;
+
 			if(count($conversion) > 0){
 				foreach ($conversion as $key => $value) {
 					$temp_array['selling_price'] = $value->selling_price;
 			$temp_array['cost_price'] = $value->cost_price;
+			$temp_array['conversion_id'] = $value->id;
 				}
 
 			}
@@ -61,6 +63,10 @@ class ConversionController extends Controller
 	}
 	public function create(Request $request){
 		$flag = $this->conversionRepo->create($request->all());
+		return $this->successError($flag);
+	}
+	public function delete($id){
+		$flag = $this->conversionRepo->delete($id);
 		return $this->successError($flag);
 	}
 }

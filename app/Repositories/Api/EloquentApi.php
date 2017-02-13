@@ -22,7 +22,8 @@ class EloquentApi implements ApiRepository{
 					->join('forex_conversions','forex_conversions.country_id','=','countries.id')
 					->select('countries.name','countries.flag','forex_conversions.selling_price','forex_conversions.cost_price')
 					->whereDate('forex_conversions.created_at',Date('Y-m-d'))
-					->take(12)
+					
+					->orderBy('countries.position','ASC')
 					->get();
 			return $this->formatInTableForForex($datas);
 			break;
@@ -40,19 +41,19 @@ class EloquentApi implements ApiRepository{
 
 		$template .= "<div class='table-responsive'>"
   			."<table class='table table-bordered'>";
-  			$template .= "<thead><th>Country</th><th>Selling Price</th><th>Cost Price</th></thead>";
+  			$template .= "<thead><th>बिदेशी बिनिमय दर  </th><th>बिक्री दर </th><th>खरिद दर </th></thead>";
   			foreach($datas as $data){
 
   			
   			$template .="<tr>"
-  			 ."<td>".$data->name."<img src='' alt=''/></td>"
+  			 ."<td><img src='http://localhost:8000/uploads/flag/".$data->flag."' alt=''/>&nbsp;&nbsp;&nbsp;&nbsp;".$data->name."</td>"
   			."<td>".$data->selling_price."</td>"
   			."<td>".$data->cost_price."</td>"
   			
   			."</tr>";
   			}
    
- 			$template .= "</table></div>";
+ 			$template .= "</table><span class='pull-right'><strong>Source:NRB</h4></strong></div>";
 
  		return $template;
 	}

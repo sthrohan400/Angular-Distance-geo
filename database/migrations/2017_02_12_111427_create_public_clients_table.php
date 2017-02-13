@@ -16,7 +16,7 @@ class CreatePublicClientsTable extends Migration
         Schema::create('public_clients', function (Blueprint $table) {
             $table->increments('id');
             $table->string('client_web')->unique();
-            $table->string('name');
+            $table->string('token_id');
             $table->timestamps();
         });
     }

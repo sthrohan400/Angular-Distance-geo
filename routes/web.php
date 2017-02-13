@@ -45,6 +45,7 @@ Route::group(['prefix' => 'admin'], function() {
 	Route::group(['prefix' =>'conversion'],function(){
 		Route::get('/','conversion\ConversionController@index');
 		Route::post('/create','conversion\ConversionController@create');
+		Route::get('/delete/{id}','conversion\ConversionController@delete');
 
 
 	});
