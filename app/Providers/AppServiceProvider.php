@@ -27,6 +27,7 @@ class AppServiceProvider extends ServiceProvider
         $this->registerForexRepository();
         $this->registerCountryRepository();
         $this->registerConversionRepository();
+        $this->registerRashiRepository();
        
         //
     }
@@ -46,9 +47,15 @@ class AppServiceProvider extends ServiceProvider
 	
 
 	public function registerForexRepository() {
+        return $this->app->bind(
+            'App\\Repositories\\Api\\ApiRepository',
+            'App\\Repositories\\Api\\EloquentApi'
+        );
+    }
+    public function registerRashiRepository() {
 		return $this->app->bind(
-			'App\\Repositories\\Api\\ApiRepository',
-			'App\\Repositories\\Api\\EloquentApi'
+			'App\\Repositories\\Rashi\\RashiRepository',
+			'App\\Repositories\\Rashi\\EloquentRashi'
 		);
 	}
 

@@ -25,13 +25,15 @@ Route::group(['prefix' => 'admin'], function() {
 	Route::get('/logout','Dashboard\DashboardController@logout'); 
 }); 
 
-/*
+
+Route::group(['prefix' => 'admin'], function() { 
+
+	/*
 |--------------------------------------------------------------------------
-| Country Routes
+| Forex Api  Routes
 |--------------------------------------------------------------------------
 */
-Route::group(['prefix' => 'admin'], function() { 
-	Route::group(['prefix' => 'web'], function() { 
+	Route::group(['prefix' => 'forex'], function() { 
 	Route::group(['prefix' => 'country'], function() { 
 		Route::get('/','Country\CountryController@index');
 
@@ -50,4 +52,21 @@ Route::group(['prefix' => 'admin'], function() {
 
 	});
 	}); 
+
+/*
+|--------------------------------------------------------------------------
+| Horoscope Routes
+|--------------------------------------------------------------------------
+*/
+
+Route::group(['prefix' => 'horoscope'], function() { 
+	Route::group(['prefix' => 'rashi'], function() { 
+		Route::get('/','Rashi\RashiController@index');
+		Route::post('/create','Rashi\RashiController@create');
+		Route::get('/delete/{id}','Rashi\RashiController@delete');
+		Route::get('/edit/{id}','Rashi\RashiController@edit');
+		Route::post('/update/{id}','Rashi\RashiController@update');
+
+	});		
+	});		
 }); 

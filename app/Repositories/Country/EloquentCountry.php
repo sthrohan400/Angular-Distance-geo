@@ -73,7 +73,7 @@ class EloquentCountry implements CountryRepository{
 
 			case('upload'):
 
-			$destinationPath = 'uploads/Flag/'; 
+			$destinationPath = 'uploads/flag/'; 
 
 			$extension = $input['flag']->getClientOriginalExtension();
 
@@ -90,7 +90,7 @@ class EloquentCountry implements CountryRepository{
 
 			case('delete'):
 
-			$destinationPath = 'uploads/Flag/'; 
+			$destinationPath = 'uploads/flag/'; 
 
 			$file_deleteion = unlink($destinationPath.$input['flag']);
 			if($file_deleteion === false)

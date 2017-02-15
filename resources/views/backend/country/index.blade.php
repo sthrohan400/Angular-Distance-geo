@@ -3,7 +3,7 @@
 Countries
 @endsection
 @section('site_map')
-Dashboard / web / country
+Dashboard / forex / country
 @endsection
 
 @section('content')
@@ -15,7 +15,7 @@ Dashboard / web / country
 			
 		</div>
 		<div class="box-body">
-			<form role="form" action="{{url('admin/web/country/create/')}}" method="post" enctype="multipart/form-data" class="">
+			<form role="form" action="{{url('admin/forex/country/create/')}}" method="post" enctype="multipart/form-data" class="">
 				{!! csrf_field() !!}
 				<div class="form-group">
 
@@ -96,13 +96,13 @@ Dashboard / web / country
 						<tr>
 
 							<td>{{$i}}</td>
-							<td>{{$country->name}}</td>
-							<td> <img src="{{'/uploads/flag/'.$country->flag}}" alt="{{$country->flag}}"> </td>
-							<td>{{$country->amount}}</td>
+							<td>{{$country['name']}}</td>
+							<td> <img src="{{'/uploads/flag/'.$country['flag']}}" alt="{{$country['flag']}}"> </td>
+							<td>{{$country['amount']}}</td>
 							<td>
 								<div class="btn-group btn-group-xs">
-									<a href="{{url('admin/web/country/edit/'.$country->id)}}" class="btn btn-primary" data-toggle="tooltip" title="Edit">Edit</a>
-									<a href="{{url('admin/web/country/delete/'.$country->id)}}" class="btn btn-danger" data-toggle="tooltip" title="Delete" onclick="return confirm('Are you sure you want to delete this Notice Permanently?')">Delete</a>
+									<a href="{{url('admin/forex/country/edit/'.$country['id'])}}" class="btn btn-primary" data-toggle="tooltip" title="Edit">Edit</a>
+									<a href="{{url('admin/forex/country/delete/'.$country['id'])}}" class="btn btn-danger" data-toggle="tooltip" title="Delete" onclick="return confirm('Are you sure you want to delete this Notice Permanently?')">Delete</a>
 
 
 								</div>

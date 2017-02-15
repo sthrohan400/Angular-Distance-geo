@@ -3,7 +3,7 @@
 Conversion
 @endsection
 @section('site_map')
-Dashboard / web / conversion
+Dashboard / forex / conversion
 @endsection
 
 @section('content')
@@ -52,7 +52,7 @@ Dashboard / web / conversion
 						
 							</td>
 							@if(array_key_exists('selling_price', $data))
-							<form method="post" action="{{url('admin/web/conversion/create')}}">
+							<form method="post" action="{{url('admin/forex/conversion/create')}}">
 							{!! csrf_field() !!}
 							<input type="hidden" name="country_id" value="{{$data['id']}}">
 							<input type="hidden" name="lang_type" value="eng">
@@ -63,7 +63,7 @@ Dashboard / web / conversion
 							</td>
 							</form>
 							@else
-							<form method="post" action="{{url('admin/web/conversion/create')}}">
+							<form method="post" action="{{url('admin/forex/conversion/create')}}">
 							{!! csrf_field() !!}
 							<input type="hidden" name="country_id" value="{{$data['id']}}">
 							<input type="hidden" name="lang_type" value="eng">
@@ -90,7 +90,7 @@ Dashboard / web / conversion
 							<div class="btn-group btn-group-xs">
 							@if(array_key_exists('conversion_id', $data))
 								
-								<a href="{{url('admin/web/conversion/delete/'.$data['conversion_id'])}}" class="btn btn-danger" data-toggle="tooltip" title="Delete" onclick="return confirm('Are you sure you want to delete this Notice Permanently?')">Delete</a>
+								<a href="{{url('admin/forex/conversion/delete/'.$data['conversion_id'])}}" class="btn btn-danger" data-toggle="tooltip" title="Delete" onclick="return confirm('Are you sure you want to delete this Notice Permanently?')">Delete</a>
 								@endif
 							</div>
 

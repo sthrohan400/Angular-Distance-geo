@@ -22,6 +22,7 @@ class EloquentApi implements ApiRepository{
 					->join('forex_conversions','forex_conversions.country_id','=','countries.id')
 					->select('countries.name','countries.flag','forex_conversions.selling_price','forex_conversions.cost_price')
 					->whereDate('forex_conversions.created_at',Date('Y-m-d'))
+					->take(10)
 
 					->orderBy('countries.position','ASC')
 					->get();
@@ -46,9 +47,9 @@ class EloquentApi implements ApiRepository{
 
   			
   			$template .="<tr>"
-  			 ."<td><img src='http://localhost:8000/uploads/flag/".$data->flag."' alt=''/>&nbsp;&nbsp;&nbsp;&nbsp;".$data->name."</td>"
-  			."<td>".$data->selling_price."</td>"
-  			."<td>".$data->cost_price."</td>"
+  			 ."<td><img src='http://localhost:8000/uploads/flag/".$data['flag']."' alt=''/>&nbsp;&nbsp;&nbsp;&nbsp;".$data['name']."</td>"
+  			."<td>".$data['selling_price']."</td>"
+  			."<td>".$data['cost_price']."</td>"
   			
   			."</tr>";
   			}
