@@ -14,6 +14,7 @@ class CountryController extends Controller{
 		CountryRepository $countryRepo
 	){
 		$this->countryRepo = $countryRepo;
+		$this->middleware('auth');
 	}
 
 	public function successError($flag){

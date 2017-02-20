@@ -28,6 +28,7 @@ class AppServiceProvider extends ServiceProvider
         $this->registerCountryRepository();
         $this->registerConversionRepository();
         $this->registerRashiRepository();
+        $this->registerRashiDataRepository();
        
         //
     }
@@ -58,6 +59,12 @@ class AppServiceProvider extends ServiceProvider
 			'App\\Repositories\\Rashi\\EloquentRashi'
 		);
 	}
+    public function registerRashiDataRepository(){
+        return $this->app->bind(
+            'App\\Repositories\\RashiData\\RashiDataRepository',
+            'App\\Repositories\\RashiData\\EloquentRashiData'
+            );
+    }
 
 	/**/
 }

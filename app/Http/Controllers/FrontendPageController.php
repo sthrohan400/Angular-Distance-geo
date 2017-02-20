@@ -23,10 +23,10 @@ class FrontendPageController extends Controller
      */
     public function index()
     {
-        return view('frontend.home.home');
+        return view('frontend.welcome');
     }
-    public function about()
+    public function public_Forex()
     {
-        return view('frontend.about.about');
+        return view('frontend.forex.public');
     }
 }

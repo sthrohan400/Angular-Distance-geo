@@ -93,7 +93,7 @@ class EloquentRashi implements RashiRepository{
 			{
 				return false;
 			}
-			$rimg = Image::make($destinationPath . $fileName)->save($destinationPath . $fileName);
+			$rimg = Image::make($destinationPath . $fileName)->resize(40,40)->save($destinationPath . $fileName);
 			return $fileName;
 			break;
 

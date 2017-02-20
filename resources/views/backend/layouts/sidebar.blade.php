@@ -6,7 +6,8 @@
       <img src="/Backend_asset/dist/img/avatar.png" class="img-circle" alt="User Image">
     </div>
     <div class="pull-left info">
-      <p>{{--ucwords($user['name'])--}}</p>
+     
+      <small>{{($user['email'])}}</small><br>
       <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
     </div>
   </div>
@@ -86,7 +87,7 @@
     <li class="treeview">
 
 
-     <a href="{{url('/admin/horoscope/rashi')}}">
+     <a href="{{url('/admin/horoscope/setting')}}">
       <i class="fa fa-plus"></i> <span>Horoscope Setting</span>
 
     </a>
@@ -95,7 +96,7 @@
     <li class="treeview">
 
 
-     <a href="{{url('/admin/forex/country')}}">
+     <a href="{{url('/admin/horoscope/rashi/daily')}}">
       <i class="fa fa-plus"></i> <span>Daily</span>
 
     </a>
@@ -104,7 +105,7 @@
   <li class="treeview">
 
 
-   <a href="{{url('/admin/forex/conversion')}}">
+   <a href="{{url('/admin/horoscope/rashi/weekly')}}">
     <i class="fa fa-plus"></i> <span>Weekly</span>
 
   </a>
@@ -113,7 +114,7 @@
 <li class="treeview">
 
 
- <a href="{{url('/admin/forex/conversion')}}">
+ <a href="{{url('/admin/horoscope/rashi/yearly')}}">
   <i class="fa fa-plus"></i> <span>Monthly</span>
 
 </a>
@@ -122,7 +123,7 @@
 <li class="treeview">
 
 
- <a href="{{url('/admin/forex/conversion')}}">
+ <a href="{{url('/admin/horoscope/daily')}}">
   <i class="fa fa-plus"></i> <span>Yearly</span>
 
 </a>

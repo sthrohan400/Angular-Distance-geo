@@ -8,5 +8,5 @@ class PublicClient extends Model
 {
     //
     protected $table = 'public_clients';
-    protected $fillable = ['client_web','name'];
+    protected $fillable = ['website_url','email'];
 }

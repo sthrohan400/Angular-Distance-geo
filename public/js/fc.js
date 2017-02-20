@@ -25,8 +25,15 @@
 
                         },
                         error: function (e) {
+                         if(e.status == 401)
+                         {
+                             $template = 'Sorry !! This Website is Unauthorized. http://localhost:8000 .Thankyou';
                            
-                            alert(e);
+                           
+                           $('#forex').html($template); 
+                         }
+                           
+                           
                         }
                     });
 
