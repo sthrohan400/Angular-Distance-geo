@@ -18,6 +18,7 @@ class ConversionController extends Controller
 	public function __construct(CountryRepository $countryRepo , ConversionRepository $conversionRepo){
 		$this->countryRepo = $countryRepo;
 		$this->conversionRepo = $conversionRepo;
+		$this->middleware('auth');
 
 	}
 
@@ -37,16 +38,16 @@ class ConversionController extends Controller
 			$temp_array = array();
 			$conversion = DB::table('forex_conversions')->where('country_id',$country->id)
 							->whereDate('created_at',Date('Y-m-d'))->get();
-			$temp_array['name'] = $country->name;
-			$temp_array['flag'] = $country->flag;
-			$temp_array['amount'] = $country->amount;
-			$temp_array['id'] = $country->id;
+			$temp_array['name'] = $country['name'];
+			$temp_array['flag'] = $country['flag'];
+			$temp_array['amount'] = $country['amount'];
+			$temp_array['id'] = $country['id'];
 
 			if(count($conversion) > 0){
 				foreach ($conversion as $key => $value) {
-					$temp_array['selling_price'] = $value->selling_price;
-			$temp_array['cost_price'] = $value->cost_price;
-			$temp_array['conversion_id'] = $value->id;
+					$temp_array['selling_price'] = $value['selling_price'];
+			$temp_array['cost_price'] = $value['cost_price'];
+			$temp_array['conversion_id'] = $value['id'];
 				}
 
 			}

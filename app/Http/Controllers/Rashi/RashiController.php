@@ -13,6 +13,7 @@ class RashiController extends Controller
 	public function __construct(RashiRepository $rashiRepo){
 
 		$this->rashiRepo = $rashiRepo;
+        $this->middleware('auth');
 
 	}
 	public function successError($flag)

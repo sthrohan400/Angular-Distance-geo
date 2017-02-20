@@ -27,8 +27,8 @@
                             <img src="/Backend_asset/dist/img/avatar.png" class="img-circle" alt="User Image">
 
                             <p>
-                                {{--ucwords($user['name'])--}}
-                                <small>{{--date("Y-m-d",$user['created_at'])--}}</small>
+                                {{ucwords($user['name'])}}
+                                <small>{{ $user['created_at'] }}</small>
                             </p>
                         </li>
                         <!-- Menu Body -->

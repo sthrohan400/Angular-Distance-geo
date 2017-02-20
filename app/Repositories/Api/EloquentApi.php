@@ -13,11 +13,11 @@ class EloquentApi implements ApiRepository{
 
 	}
 
-	public function getPublicAPI($name,$client){
+	public function getPublicAPI($name,$app_id){
 
 		switch ($name){
 			case 'forex':
-			event(new AddPublicApiClient($this->public_client,$client));
+			//event(new AddPublicApiClient($this->public_client,$client));
 			$datas = DB::table('countries')
 					->join('forex_conversions','forex_conversions.country_id','=','countries.id')
 					->select('countries.name','countries.flag','forex_conversions.selling_price','forex_conversions.cost_price')

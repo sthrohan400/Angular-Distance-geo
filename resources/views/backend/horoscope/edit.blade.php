@@ -3,7 +3,7 @@
 Rashi Settings Update
 @endsection
 @section('site_map')
-Dashboard / Horoscope / Rashi
+Dashboard / Horoscope / Setting
 @endsection
 
 @section('content')
@@ -16,7 +16,7 @@ Dashboard / Horoscope / Rashi
 		</div>
 		<div class="box-body">
 		@if($data['type'] == 'np')
-			<form role="form" action="{{url('admin/horoscope/rashi/update',array($data['id']))}}" method="post" enctype="multipart/form-data" class="">
+			<form role="form" action="{{url('admin/horoscope/setting/update',array($data['id']))}}" method="post" enctype="multipart/form-data" class="">
 				{!! csrf_field() !!}
 				<input type="hidden" name="type" value="np">
 				<div class="form-group">
@@ -67,7 +67,7 @@ Dashboard / Horoscope / Rashi
 		</div>
 		<div class="box-body">
 			@if($data['type'] == 'eng')
-			<form role="form" action="{{url('admin/horoscope/rashi/update',array($data['id']))}}" method="post" enctype="multipart/form-data" class="">
+			<form role="form" action="{{url('admin/horoscope/setting/update',array($data['id']))}}" method="post" enctype="multipart/form-data" class="">
 				{!! csrf_field() !!}
 				<input type="hidden" name="type" value="eng">
 				<div class="form-group">
@@ -150,8 +150,8 @@ Dashboard / Horoscope / Rashi
 								<td>{{$rashi['position']}}</td>
 								<td>
 									<div class="btn-group btn-group-xs">
-										<a href="{{url('admin/horoscope/rashi/edit/'.$rashi['id'])}}" class="btn btn-primary" data-toggle="tooltip" title="Edit">Edit</a>
-										<a href="{{url('admin/horoscope/rashi/delete/'.$rashi['id'])}}" class="btn btn-danger" data-toggle="tooltip" title="Delete" onclick="return confirm('Are you sure you want to delete this Notice Permanently?')">Delete</a>
+										<a href="{{url('admin/horoscope/setting/edit/'.$rashi['id'])}}" class="btn btn-primary" data-toggle="tooltip" title="Edit">Edit</a>
+										<a href="{{url('admin/horoscope/setting/delete/'.$rashi['id'])}}" class="btn btn-danger" data-toggle="tooltip" title="Delete" onclick="return confirm('Are you sure you want to delete this Notice Permanently?')">Delete</a>
 
 
 									</div>
@@ -230,8 +230,8 @@ Dashboard / Horoscope / Rashi
 								<td>{{$rashi['position']}}</td>
 								<td>
 									<div class="btn-group btn-group-xs">
-										<a href="{{url('admin/horoscope/rashi/edit/'.$rashi['id'])}}" class="btn btn-primary" data-toggle="tooltip" title="Edit">Edit</a>
-										<a href="{{url('admin/horoscope/rashi/delete/'.$rashi['id'])}}" class="btn btn-danger" data-toggle="tooltip" title="Delete" onclick="return confirm('Are you sure you want to delete this Notice Permanently?')">Delete</a>
+										<a href="{{url('admin/horoscope/setting/edit/'.$rashi['id'])}}" class="btn btn-primary" data-toggle="tooltip" title="Edit">Edit</a>
+										<a href="{{url('admin/horoscope/setting/delete/'.$rashi['id'])}}" class="btn btn-danger" data-toggle="tooltip" title="Delete" onclick="return confirm('Are you sure you want to delete this Notice Permanently?')">Delete</a>
 
 
 									</div>

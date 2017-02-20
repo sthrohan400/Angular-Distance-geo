@@ -11,9 +11,16 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
+Route::get('register/forex/public','FrontendPageController@public_Forex');
+Route::post('register/forex/public','FrontendRequestController@register_Public_Forex');
+Route::get('','FrontendPageController@index');
+
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +29,11 @@ Route::get('/', function () {
 */
 Route::group(['prefix' => 'admin'], function() { 
 	Route::get('/dashboard','Dashboard\DashboardController@index'); 
-	Route::get('/logout','Dashboard\DashboardController@logout'); 
+	Route::post('/login','AuthenticateUserController@checkLogin');
+	Route::get('/logout','AuthenticateUserController@checklogout'); 
+	Route::get('/login',function(){
+	return view('backend.login');
+});
 }); 
 
 
@@ -60,13 +71,22 @@ Route::group(['prefix' => 'admin'], function() {
 */
 
 Route::group(['prefix' => 'horoscope'], function() { 
-	Route::group(['prefix' => 'rashi'], function() { 
+	
+	Route::group(['prefix' => 'setting'], function() { 
 		Route::get('/','Rashi\RashiController@index');
 		Route::post('/create','Rashi\RashiController@create');
 		Route::get('/delete/{id}','Rashi\RashiController@delete');
 		Route::get('/edit/{id}','Rashi\RashiController@edit');
 		Route::post('/update/{id}','Rashi\RashiController@update');
 
-	});		
+	});	
+
+	Route::group(['prefix' => 'rashi'], function() { 
+
+		Route::get('/{page}','Rashi\RashiHandlerController@index');
+		Route::post('/create','Rashi\RashiHandlerController@create');
+		Route::get('/delete/{id}','Rashi\RashiHandlerController@delete');
+	});
+	
 	});		
 }); 

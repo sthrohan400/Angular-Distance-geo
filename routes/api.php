@@ -17,4 +17,4 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
 
-Route::get('/public/{name}/client/{client}','ApiRequestController@publicAPI');
+Route::get('/public/{name}/client/{app_id}','ApiRequestController@publicAPI')->middleware('forexapi');
